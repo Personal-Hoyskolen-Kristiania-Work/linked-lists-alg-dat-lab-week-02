@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 public class AddToLinkedList {
     // Java program to add elements
-    // to a LinkedList
+// to a LinkedList
     public LinkedList addToLinkedList(){
         LinkedList<String> ll = new LinkedList<>();
 
