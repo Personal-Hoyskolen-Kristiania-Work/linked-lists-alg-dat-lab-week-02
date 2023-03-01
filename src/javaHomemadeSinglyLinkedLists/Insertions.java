@@ -14,15 +14,14 @@ public class Insertions {
     // if the int value contained in a node matches the "key" value, then place node after that node
     public Node insertAfterNodeValue(Node list, int key, int intVal) {
         Node newNode = new Node(intVal); //node with new value we want to add
-        Node temp = list; //no clue why I need to do extra variable magic, but it works... WHY?
         // change newNode to the next node if head data variable match "key" value
-        if(key == temp.data) {
-            newNode.next = temp.next;
-            temp.next = newNode;
-            return temp;
+        if(key == list.data) {
+            newNode.next = list.next;
+            list.next = newNode;
+            return list; //return list with the changes
         }
 
-        temp = list; //temporary variable containing the elements from the linked list that's getting added to
+        Node temp = list; //temporary variable containing the elements from the linked list that's getting added to
 
         // looping through all elements that do not meet the requirements
         while(temp.data != key) {
@@ -37,7 +36,17 @@ public class Insertions {
         }
         newNode.next = temp.next; //set the next variable to equal current temp nodes next
         temp.next = newNode; //set the next variable to equal the new node, making temp head the head node
-        list.next = temp; //placing the head back on top again
+        return list; //return list with the changes
+    }
+
+    public Node tailInsertion(Node list, int intVal) {
+        Node newNode = new Node(intVal);
+        Node temp = list;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
         return list;
     }
 }

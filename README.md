@@ -1,7 +1,7 @@
 # linked-lists-alg-dat-lab-week-02
 
 * [ ] implement homemade linked list
-  * [ ] Insertion
+  * [x] Insertion
   * [ ] Deletion
   * [x] Traversing
     * only forward, no reference available for backward traversing
