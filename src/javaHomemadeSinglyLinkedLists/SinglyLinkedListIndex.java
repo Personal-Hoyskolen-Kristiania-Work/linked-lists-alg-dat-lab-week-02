@@ -6,6 +6,7 @@ public class SinglyLinkedListIndex {
     private static LinkedList linkedListTwo = new LinkedList();
     // operations
     private static final Insertions insertion = new Insertions();
+    private static final Deletions deletion = new Deletions();
     private static final PrintLinkedList print = new PrintLinkedList();
 
     public static void main(String[] args){
@@ -21,6 +22,10 @@ public class SinglyLinkedListIndex {
         // add to position after specified node in first list
         afterNodeInsertion(linkedListOne, 4, 3);
         afterNodeInsertion(linkedListOne, 3, 2);
+        print.pLL(linkedListOne);
+        deleteSelectedNode(linkedListOne, 2);
+        print.pLL(linkedListOne);
+        deleteSelectedNode(linkedListOne, 4);
         print.pLL(linkedListOne);
         //endregion
 
@@ -59,5 +64,9 @@ public class SinglyLinkedListIndex {
     //
     private static void tailInsertion(LinkedList list, int intVal) {
         list.head = insertion.tailInsertion(list.head, intVal);
+    }
+
+    private static void deleteSelectedNode(LinkedList list, int key) {
+        deletion.deleteAtSelectedNode(list, key);
     }
 }
