@@ -2,7 +2,7 @@
 
 * [ ] implement homemade linked list
   * [x] Insertion
-  * [ ] Deletion
+  * [x] Deletion
   * [x] Traversing
     * only forward, no reference available for backward traversing
   * [ ] Searching

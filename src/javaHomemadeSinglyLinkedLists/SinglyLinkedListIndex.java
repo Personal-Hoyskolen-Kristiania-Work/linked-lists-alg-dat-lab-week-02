@@ -23,15 +23,16 @@ public class SinglyLinkedListIndex {
         afterNodeInsertion(linkedListOne, 4, 3);
         afterNodeInsertion(linkedListOne, 3, 2);
         print.pLL(linkedListOne);
-        deleteSelectedNode(linkedListOne, 2);
+        deleteHeadNode(linkedListOne);
         print.pLL(linkedListOne);
-        deleteSelectedNode(linkedListOne, 4);
+        deleteAfterNode(linkedListOne, 2);
         print.pLL(linkedListOne);
         //endregion
 
         //region linked list two
         System.out.println("\nLinked list two:");
         // add to head position in linked
+        headInsertion(linkedListTwo, 7);
         headInsertion(linkedListTwo,4);
         headInsertion(linkedListTwo,4);
         headInsertion(linkedListTwo,3);
@@ -44,6 +45,10 @@ public class SinglyLinkedListIndex {
         afterNodeInsertion(linkedListTwo,4,6);
         afterNodeInsertion(linkedListTwo,4,6);
         afterNodeInsertion(linkedListTwo,4,6);
+        print.pLL(linkedListTwo);
+        deleteAfterNode(linkedListTwo,4);
+        deleteAfterNode(linkedListTwo,4);
+        deleteAfterNode(linkedListTwo,7);
         print.pLL(linkedListTwo);
         //endregion
     }
@@ -66,7 +71,10 @@ public class SinglyLinkedListIndex {
         list.head = insertion.tailInsertion(list.head, intVal);
     }
 
-    private static void deleteSelectedNode(LinkedList list, int key) {
-        deletion.deleteAtSelectedNode(list, key);
+    private static void deleteHeadNode(LinkedList list) {
+        deletion.deleteAtHead(list);
+    }
+    private static void deleteAfterNode(LinkedList list, int key) {
+        deletion.deleteAfterSelectedNode(list, key);
     }
 }
