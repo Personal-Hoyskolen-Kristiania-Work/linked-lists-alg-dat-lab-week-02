@@ -5,7 +5,7 @@ public class Insertions {
     // previous head node into its next variable reference
     public Node insertAtHead(Node list, int intVal){
         Node newNode = new Node(intVal);
-        newNode.next = list;
+        newNode.setNext(list);
         return newNode;
     }
 
@@ -15,38 +15,38 @@ public class Insertions {
     public Node insertAfterNodeValue(Node list, int key, int intVal) {
         Node newNode = new Node(intVal); //node with new value we want to add
         // change newNode to the next node if head data variable match "key" value
-        if(key == list.data) {
-            newNode.next = list.next;
-            list.next = newNode;
+        if(key == list.getData()) {
+            newNode.setNext(list.getNext());
+            list.setNext(newNode);
             return list; //return list with the changes
         }
 
         Node temp = list; //temporary variable containing the elements from the linked list that's getting added to
 
         // looping through all elements that do not meet the requirements
-        while(temp.data != key) {
+        while(temp.getData() != key) {
             // set temp node to equal next temp node while loop is going
             // effectively decreasing temp linked list by one for each node the loop traverse through
-            temp = temp.next;
+            temp = temp.getNext();
             // return the original list if loop reach last element
             if (temp == null) {
                 System.out.println("\"key\" value, was not found");
                 return list;
             }
         }
-        newNode.next = temp.next; //set the next variable to equal current temp nodes next
-        temp.next = newNode; //set the next variable to equal the new node, making temp head the head node
+        newNode.setNext(temp.getNext()); //set the next variable to equal current temp nodes next
+        temp.setNext(newNode); //set the next variable to equal the new node, making temp head the head node
         return list; //return list with the changes
     }
 
     public Node tailInsertion(Node list, int intVal) {
         Node newNode = new Node(intVal);
         Node temp = list;
-        while (temp.next != null) {
-            temp = temp.next;
+        while (temp.getNext() != null) {
+            temp = temp.getNext();
         }
 
-        temp.next = newNode;
+        temp.setNext(newNode);
         return list;
     }
 }
