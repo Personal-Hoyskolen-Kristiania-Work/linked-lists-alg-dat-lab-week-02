@@ -1,11 +1,11 @@
 # linked-lists-alg-dat-lab-week-02
 
-* [ ] implement homemade linked list
+* [x] implement homemade linked list
   * [x] Insertion
   * [x] Deletion
   * [x] Traversing
     * only forward, no reference available for backward traversing
-  * [ ] Searching
+  * [x] Searching
 
 * I might do this
   * Doubly linked lists operations:

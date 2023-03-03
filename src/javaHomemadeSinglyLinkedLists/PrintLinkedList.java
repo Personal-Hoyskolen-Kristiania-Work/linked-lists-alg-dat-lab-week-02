@@ -10,4 +10,8 @@ public class PrintLinkedList {
         }
         System.out.println("NULL");
     }
+    public void pN(LinkedList N) {
+        // print out current node
+        System.out.println(N.head.getData());
+    }
 }

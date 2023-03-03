@@ -16,7 +16,7 @@ public class Deletions {
         while (temp.getData() != key) {
             temp = temp.getNext();
             prev = prev.getNext();
-            if(temp.getNext() == null) {
+            if(prev.getNext() == null) {
                 System.out.println("node not found");
                 return list;
             }

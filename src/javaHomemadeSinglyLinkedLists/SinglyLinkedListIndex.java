@@ -4,9 +4,11 @@ public class SinglyLinkedListIndex {
     // linked lists
     private static final LinkedList linkedListOne = new LinkedList(); //this bad boy can store so many integer values
     private static final LinkedList linkedListTwo = new LinkedList();
+    private static LinkedList dummyLinkedList = new LinkedList();
     // operations
     private static final Insertions insertion = new Insertions();
     private static final Deletions deletion = new Deletions();
+    private static final Search searching = new Search();
     private static final PrintLinkedList print = new PrintLinkedList();
 
     public static void main(String[] args){
@@ -27,6 +29,10 @@ public class SinglyLinkedListIndex {
         print.pLL(linkedListOne);
         deleteAtNode(linkedListOne, 2);
         print.pLL(linkedListOne);
+        searchForNode(dummyLinkedList, linkedListOne, 3);
+        print.pN(dummyLinkedList);
+        searchForNode(dummyLinkedList,linkedListOne, 0);
+        print.pN(dummyLinkedList);
         //endregion
 
         //region linked list two
@@ -49,6 +55,7 @@ public class SinglyLinkedListIndex {
         deleteAtNode(linkedListTwo,4);
         deleteAtNode(linkedListTwo,4);
         deleteAtNode(linkedListTwo,7);
+        deleteAtNode(linkedListTwo,9);
         print.pLL(linkedListTwo);
         //endregion
     }
@@ -76,5 +83,9 @@ public class SinglyLinkedListIndex {
     }
     private static void deleteAtNode(LinkedList list, int key) {
         list.head = deletion.deleteAtSelectedNode(list.head, key);
+    }
+
+    private static void searchForNode(LinkedList setList,LinkedList getList, int intVal) {
+        setList.head = searching.search(getList.head, intVal);
     }
 }
