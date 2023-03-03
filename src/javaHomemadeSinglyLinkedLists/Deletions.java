@@ -1,26 +1,29 @@
 package src.javaHomemadeSinglyLinkedLists;
 
 public class Deletions {
-    public LinkedList deleteAtHead(LinkedList list) {
-        Node newNode = list.head;
-        list.head = newNode.getNext();
+    public Node deleteAtHead(Node list) {
+        Node newNode = list;
+        list = newNode.getNext();
         return list;
 
 
     }
-    public LinkedList deleteAfterSelectedNode(LinkedList list, int key) {
-        Node newNode = list.head;
-        Node temp = list.head;
+    public Node deleteAtSelectedNode(Node list, int key) {
+        Node temp = list; //node for running the loop
+        Node prev = list; //node for doing the correct iteration
 
+        temp = temp.getNext();
         while (temp.getData() != key) {
             temp = temp.getNext();
+            prev = prev.getNext();
             if(temp.getNext() == null) {
                 System.out.println("node not found");
                 return list;
             }
         }
-        newNode = temp.getNext();
-        temp.setNext(newNode.getNext());
+        // complete bs transactions
+        Node newNode = prev.getNext();
+        prev.setNext(newNode.getNext());
         return list;
     }
 }

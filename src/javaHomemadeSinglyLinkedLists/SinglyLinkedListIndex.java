@@ -2,8 +2,8 @@ package src.javaHomemadeSinglyLinkedLists;
 
 public class SinglyLinkedListIndex {
     // linked lists
-    private static LinkedList linkedListOne = new LinkedList(); //this bad boy can store so many integer values
-    private static LinkedList linkedListTwo = new LinkedList();
+    private static final LinkedList linkedListOne = new LinkedList(); //this bad boy can store so many integer values
+    private static final LinkedList linkedListTwo = new LinkedList();
     // operations
     private static final Insertions insertion = new Insertions();
     private static final Deletions deletion = new Deletions();
@@ -25,7 +25,7 @@ public class SinglyLinkedListIndex {
         print.pLL(linkedListOne);
         deleteHeadNode(linkedListOne);
         print.pLL(linkedListOne);
-        deleteAfterNode(linkedListOne, 2);
+        deleteAtNode(linkedListOne, 2);
         print.pLL(linkedListOne);
         //endregion
 
@@ -46,9 +46,9 @@ public class SinglyLinkedListIndex {
         afterNodeInsertion(linkedListTwo,4,6);
         afterNodeInsertion(linkedListTwo,4,6);
         print.pLL(linkedListTwo);
-        deleteAfterNode(linkedListTwo,4);
-        deleteAfterNode(linkedListTwo,4);
-        deleteAfterNode(linkedListTwo,7);
+        deleteAtNode(linkedListTwo,4);
+        deleteAtNode(linkedListTwo,4);
+        deleteAtNode(linkedListTwo,7);
         print.pLL(linkedListTwo);
         //endregion
     }
@@ -72,9 +72,9 @@ public class SinglyLinkedListIndex {
     }
 
     private static void deleteHeadNode(LinkedList list) {
-        deletion.deleteAtHead(list);
+        list.head = deletion.deleteAtHead(list.head);
     }
-    private static void deleteAfterNode(LinkedList list, int key) {
-        deletion.deleteAfterSelectedNode(list, key);
+    private static void deleteAtNode(LinkedList list, int key) {
+        list.head = deletion.deleteAtSelectedNode(list.head, key);
     }
 }
