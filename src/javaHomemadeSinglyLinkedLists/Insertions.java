@@ -39,6 +39,33 @@ public class Insertions {
         return list; //return list with the changes
     }
 
+    // insert based on position given
+    public Node insertAtPosition(Node list, int position, int intVal) {
+        Node newNode = new Node(intVal); //node with new value we want to add
+        // change head node if position is 0
+        if(position == 0) {
+            newNode.setNext(list);
+            return list; //return list with the changes
+        }
+
+        Node temp = list; //temporary variable containing the elements from the linked list that's getting added to
+
+        // looping through all elements that do not meet the requirements
+        for (int i = 0; i < position - 1; i++) {
+            // set temp node to equal next temp node while loop is going
+            // effectively decreasing temp linked list by one for each node the loop traverse through
+            temp = temp.getNext();
+            // return the original list if loop reach last element
+            if (temp == null) {
+                System.out.println("\"position\" was not found");
+                return list;
+            }
+        }
+        newNode.setNext(temp.getNext()); //set the next variable to equal current temp nodes next
+        temp.setNext(newNode); //set the next variable to equal the new node, making temp head the head node
+        return list; //return list with the changes
+    }
+
     public Node tailInsertion(Node list, int intVal) {
         Node newNode = new Node(intVal);
         Node temp = list;
