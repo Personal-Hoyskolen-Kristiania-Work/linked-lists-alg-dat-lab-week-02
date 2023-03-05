@@ -4,7 +4,7 @@ public class SinglyLinkedListIndex {
     // linked lists
     private static final LinkedList linkedListOne = new LinkedList(); //this bad boy can store so many integer values
     private static final LinkedList linkedListTwo = new LinkedList();
-    private static LinkedList dummyLinkedList = new LinkedList();
+    private static final LinkedList dummyLinkedList = new LinkedList();
     // operations
     private static final Insertions insertion = new Insertions();
     private static final Deletions deletion = new Deletions();
@@ -14,24 +14,19 @@ public class SinglyLinkedListIndex {
     public static void main(String[] args){
         //region linked list one
         System.out.println("Linked list one:");
-        // add to head position in linked list one
-        headInsertion(linkedListOne, 4);
-        tailInsertion(linkedListOne, 1);
+        headInsertion(linkedListOne, 4); //add to head position in linked list one
         print.pLL(linkedListOne);
-        // add to tail
-        tailInsertion(linkedListOne, 0);
+        tailInsertion(linkedListOne, 0); //add node to tail in linked list one
         print.pLL(linkedListOne);
-        // add to position after specified node in first list
-        afterNodeInsertion(linkedListOne, 4, 3);
-        afterNodeInsertion(linkedListOne, 3, 2);
+        afterNodeWithKeyDataInsertion(linkedListOne, 4, 3); //add node to position after node with specified data in linked list one
         print.pLL(linkedListOne);
-        deleteHeadNode(linkedListOne);
+        atSpecifiedPositionInsertion(linkedListOne, 2, 2); //add node to specified position, starting from 0
         print.pLL(linkedListOne);
-        deleteAtNode(linkedListOne, 2);
+        deleteHeadNode(linkedListOne); //delete head node in linked list one
         print.pLL(linkedListOne);
-        searchForNode(dummyLinkedList, linkedListOne, 3);
-        print.pN(dummyLinkedList);
-        searchForNode(dummyLinkedList,linkedListOne, 0);
+        deleteAtNode(linkedListOne, 0); //delete node with specified data in linked list one
+        print.pLL(linkedListOne);
+        searchForNode(dummyLinkedList, linkedListOne, 3); //search for node with specified data in linked list one
         print.pN(dummyLinkedList);
         //endregion
 
@@ -45,12 +40,12 @@ public class SinglyLinkedListIndex {
         headInsertion(linkedListTwo,4);
         print.pLL(linkedListTwo);
         // add to position after specified node in first list, except this does not exist
-        afterNodeInsertion(linkedListTwo,1,4);
+        afterNodeWithKeyDataInsertion(linkedListTwo,1,4);
         print.pLL(linkedListTwo);
         // add to position after specified node in first list, except it will only pick the first one it sees, and print 3x6 in a row
-        afterNodeInsertion(linkedListTwo,4,6);
-        afterNodeInsertion(linkedListTwo,4,6);
-        afterNodeInsertion(linkedListTwo,4,6);
+        afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
+        afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
+        afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         print.pLL(linkedListTwo);
         deleteAtNode(linkedListTwo,4);
         deleteAtNode(linkedListTwo,4);
@@ -69,8 +64,13 @@ public class SinglyLinkedListIndex {
     }
 
     // insert at position after selected nodes data variable value that equal to "key" value
-    private static void afterNodeInsertion(LinkedList list, int key, int intVal) {
+    private static void afterNodeWithKeyDataInsertion(LinkedList list, int key, int intVal) {
         list.head = insertion.insertAfterNodeValue(list.head, key, intVal);
+    }
+
+    // insert at position after selected nodes data variable value that equal to "key" value
+    private static void atSpecifiedPositionInsertion(LinkedList list, int position, int intVal) {
+        list.head = insertion.insertAtPosition(list.head, position, intVal);
     }
 
     //
