@@ -45,7 +45,7 @@ public class Insertions {
         // change head node if position is 0
         if(position == 0) {
             newNode.setNext(list);
-            return list; //return list with the changes
+            return newNode; //return list with the changes
         }
 
         Node temp = list; //temporary variable containing the elements from the linked list that's getting added to
