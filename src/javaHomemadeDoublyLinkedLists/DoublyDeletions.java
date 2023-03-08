@@ -10,18 +10,17 @@ public class DoublyDeletions {
 
     public DoublyNode deleteAtSelectedNode(DoublyNode list, int key) {
         DoublyNode temp = list; //node for running the loop
-        temp = temp.getNext();
         while (temp.getData() != key) {
             temp = temp.getNext();
-            if(temp.getNext() == null) {
+            if(temp == null) {
                 System.out.println("node not found");
                 return list;
             }
         }
 
-        // changing node references at selected node in linked list, effectively referencing itself out of existence
-        temp.getNext().setPrevious(temp.getPrevious()); //set next nodes previous node to equal node before temp node
-        temp.getPrevious().setNext(temp.getNext()); //set previous nodes next node to equal temps next node
+        // changing node references at selected node in linked list
+        DoublyNode prev = temp.getPrevious();
+        prev.setNext(temp.getNext());
         return list;
     }
 
