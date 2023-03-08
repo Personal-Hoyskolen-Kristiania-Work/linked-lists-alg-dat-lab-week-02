@@ -25,7 +25,7 @@ public class DoublyLinkedListIndex {
         print.traversePrintingDLL(linkedListOne);
         atSpecifiedPositionInsertion(linkedListOne, 2, 2); //add node to specified position, starting from 0
         print.traversePrintingDLL(linkedListOne);
-        print.reverseTraversePrintingDLL(linkedListOne);
+        print.reverseTraversePrintingDLL(linkedListOne); //reverse traverse linked list
         deleteHeadNode(linkedListOne); //delete head node in linked list one
         print.traversePrintingDLL(linkedListOne);
         deleteAtNode(linkedListOne, 0); //delete node with specified data in linked list one
