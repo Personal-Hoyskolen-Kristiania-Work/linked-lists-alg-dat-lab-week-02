@@ -17,9 +17,10 @@ public class PrintDoublyLinkedList {
             temp = temp.getNext();
         }
         while (temp != null){
-            System.out.println(temp.getData() + " --> ");
+            System.out.print(temp.getData() + " -> ");
             temp = temp.getPrevious();
         }
+        System.out.println("NULL");
     }
 
     public void printN(DoublyLinkedList N) {
