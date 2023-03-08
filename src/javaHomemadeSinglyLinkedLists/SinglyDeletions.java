@@ -1,15 +1,15 @@
 package src.javaHomemadeSinglyLinkedLists;
 
-public class Deletions {
-    public Node deleteAtHead(Node list) {
-        Node newNode = list;
+public class SinglyDeletions {
+    public SinglyNode deleteAtHead(SinglyNode list) {
+        SinglyNode newNode = list;
         list = newNode.getNext();
         return list;
     }
 
-    public Node deleteAtSelectedNode(Node list, int key) {
-        Node temp = list; //node for running the loop
-        Node prev = list; //node for doing the correct iteration
+    public SinglyNode deleteAtSelectedNode(SinglyNode list, int key) {
+        SinglyNode temp = list; //node for running the loop
+        SinglyNode prev = list; //node for doing the correct iteration
 
         temp = temp.getNext();
         while (temp.getData() != key) {
@@ -21,19 +21,19 @@ public class Deletions {
             }
         }
         // changing node references at selected node in linked list
-        Node newNode = prev.getNext();
+        SinglyNode newNode = prev.getNext();
         prev.setNext(newNode.getNext());
         return list;
     }
 
-    public Node deleteAtPosition(Node list, int position) {
-        Node newNode = list;
+    public SinglyNode deleteAtPosition(SinglyNode list, int position) {
+        SinglyNode newNode = list;
         if (position == 0) {
             list = newNode.getNext();
             return list;
         }
 
-        Node temp = list;
+        SinglyNode temp = list;
 
         for (int i = 0; i < position-1; i++) {
             temp = temp.getNext();

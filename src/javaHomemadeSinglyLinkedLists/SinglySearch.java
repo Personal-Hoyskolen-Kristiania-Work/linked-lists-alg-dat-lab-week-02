@@ -1,12 +1,12 @@
 package src.javaHomemadeSinglyLinkedLists;
 
-public class Search {
-    public Node search(Node list, int key) {
+public class SinglySearch {
+    public SinglyNode search(SinglyNode list, int key) {
         if(list.getData() == key) {
             return list;
         }
 
-        Node temp = list;
+        SinglyNode temp = list;
         while (temp.getData() != key) {
             temp = temp.getNext();
             if(temp == null){
