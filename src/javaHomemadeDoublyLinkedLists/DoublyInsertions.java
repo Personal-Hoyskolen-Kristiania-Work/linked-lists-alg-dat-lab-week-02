@@ -4,8 +4,11 @@ public class DoublyInsertions {
     // the Node element previous never get to be a class object with any value in the head node, only an empty variable
     public DoublyNode insertAtHead(DoublyNode list, int intVal){
         DoublyNode newNode = new DoublyNode(intVal); //method place value in new head node
-        list.setPrevious(newNode); //set original head nodes previous variable to new node
         newNode.setNext(list); //then previous head node is moved into its next variable reference
+        if(list == null){
+            return newNode; //if list is null, it's not possible to assign it a previous object reference, so we hand it back before that happen
+        }
+        list.setPrevious(newNode); //set original head nodes previous variable to new node
         return newNode; //return newNode with changes, by default the value of the nodes previous is set to null in constructor
     }
 

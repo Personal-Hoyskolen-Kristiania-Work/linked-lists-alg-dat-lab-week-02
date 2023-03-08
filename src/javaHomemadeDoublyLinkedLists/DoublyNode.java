@@ -10,7 +10,7 @@ public class DoublyNode {
     DoublyNode(int value) {
         setData(value); //set constructor input to equal data variable
         setNext(null); //set node object/ reference to instance to equal null
-        setPrevious(null);
+        setPrevious(null); //set node object/ reference to instance to equal null
     }
 
     //region getters

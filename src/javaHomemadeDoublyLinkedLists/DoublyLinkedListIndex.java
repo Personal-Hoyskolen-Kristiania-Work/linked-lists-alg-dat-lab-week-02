@@ -2,7 +2,7 @@ package src.javaHomemadeDoublyLinkedLists;
 
 public class DoublyLinkedListIndex {
     // linked lists
-    private static final DoublyLinkedList linkedListOne = new DoublyLinkedList(); //this bad boy can store so many integer values
+    private static final DoublyLinkedList linkedListOne = new DoublyLinkedList();
     private static final DoublyLinkedList linkedListTwo = new DoublyLinkedList();
     private static final DoublyLinkedList dummyLinkedList = new DoublyLinkedList();
     // operations
