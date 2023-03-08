@@ -60,7 +60,7 @@ public class SinglyInsertions {
             }
         }
         newNode.setNext(temp.getNext()); //set the next variable to equal current temp nodes next
-        temp.setNext(newNode); //set the next variable to equal the new node, making temp head the head node
+        temp.setNext(newNode); //set the next variable to equal the new node
         return list; //return list with the changes
     }
 
