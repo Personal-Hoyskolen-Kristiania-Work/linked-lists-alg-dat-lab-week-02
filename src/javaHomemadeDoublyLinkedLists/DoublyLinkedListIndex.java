@@ -58,7 +58,10 @@ public class DoublyLinkedListIndex {
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
+        // traverse linked list
         print.traversePrintingDLL(linkedListTwo);
+        // reverse traverse linked list
+        print.reverseTraversePrintingDLL(linkedListTwo);
         // will delete two nodes with data value 4, after head it will delete any element it finds first matching the requirement
         deleteAtNode(linkedListTwo,4);
         print.traversePrintingDLL(linkedListTwo);
