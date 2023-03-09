@@ -20,7 +20,7 @@ public class DoublyInsertions {
         // if head data variable match the "key" value, it will place newNode as the next node
         if(key == list.getData()) {
             newNode.setNext(list.getNext()); //set new nodes next node to be the next node after head node
-            newNode.setPrevious(list); //set newNode previous to null, as that's how doubly linked lists structures are set up
+            newNode.setPrevious(list); //set new nodes previous node to list
             list.setNext(newNode); //change newNode to the next node
             return list; //return list with the changes
         }

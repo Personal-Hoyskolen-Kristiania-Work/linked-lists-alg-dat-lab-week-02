@@ -62,6 +62,7 @@ public class DoublyLinkedListIndex {
         print.traversePrintingDLL(linkedListTwo);
         // reverse traverse linked list
         print.reverseTraversePrintingDLL(linkedListTwo);
+        System.out.println(linkedListTwo.head.getNext().getNext().getNext().getPrevious().getNext().getData()); //dummy test that shows how the node that get referred to as the last 4 in reverse traverse, is in fact the head node
         // will delete two nodes with data value 4, after head it will delete any element it finds first matching the requirement
         deleteAtNode(linkedListTwo,4);
         print.traversePrintingDLL(linkedListTwo);
