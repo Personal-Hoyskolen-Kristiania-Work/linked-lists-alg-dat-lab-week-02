@@ -2,7 +2,7 @@ package src.javaHomemadeDoublyLinkedLists;
 
 public class DoublyInsertions {
     // the Node element previous never get to be a class object with any value in the head node, only an empty variable
-    public DoublyNode insertAtHead(DoublyNode list, int intVal){
+    public DoublyNode insertAtHead(DoublyNode list, int intVal) {
         DoublyNode newNode = new DoublyNode(intVal); //method place value in new head node
         newNode.setNext(list); //then previous head node is moved into its next variable reference
         if(list == null){
@@ -54,6 +54,10 @@ public class DoublyInsertions {
         // change head node if position is 0
         if(position == 0) {
             newNode.setNext(list); //set newNode next variable to be list, effectively making it head
+            if(newNode.getNext() == null){
+                return newNode; //returning what we got, as we cant assign newNode to be previous node if next don't exist
+            }
+            newNode.getNext().setPrevious(newNode); //assign newNode to be previous node
             return newNode; //return newNode with the changes, previous is set to null in constructor
         }
 
