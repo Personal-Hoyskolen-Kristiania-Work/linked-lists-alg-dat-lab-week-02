@@ -41,7 +41,7 @@ public class DoublyDeletions {
         for (int i = 0; i < position; i++) {
             temp = temp.getNext();
 
-            if(temp.getNext() == null) {
+            if(temp == null) {
                 System.out.println("node not found");
                 return list;
             }
