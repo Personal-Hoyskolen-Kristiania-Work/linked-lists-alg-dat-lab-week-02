@@ -16,34 +16,47 @@ public class DoublyDeletions {
                 System.out.println("node not found");
                 return list;
             }
+            return list;
         }
 
         // changing node references at selected node in linked list
-        DoublyNode prev = temp.getPrevious();
-        prev.setNext(temp.getNext());
+        if(temp.getNext() != null && temp.getPrevious() != null) {
+            temp.getPrevious().setNext(temp.getNext());
+            temp.getNext().setPrevious(temp.getPrevious());
+        }else if(temp.getPrevious() != null) {
+            temp.getPrevious().setNext(null);
+        }else {
+            temp.getNext().setPrevious(null);
+        }
         return list;
     }
 
     public DoublyNode deleteAtPosition(DoublyNode list, int position) {
-        DoublyNode newNode = list;
+        DoublyNode temp = list;
         if (position == 0) {
-            list = newNode.getNext();
+            list = temp.getNext();
             list.setPrevious(null);
             return list;
         }
 
         for (int i = 0; i < position; i++) {
-            newNode = newNode.getNext();
+            temp = temp.getNext();
 
-            if(newNode.getNext() == null) {
+            if(temp.getNext() == null) {
                 System.out.println("node not found");
                 return list;
             }
         }
 
         // changing node references at selected node in linked list, effectively referencing itself out of existence
-        newNode.getNext().setPrevious(newNode.getPrevious()); //set next nodes previous node to equal node before newNode node
-        newNode.getPrevious().setNext(newNode.getNext()); //set previous nodes next node to equal newNodes next node
+        if(temp.getNext() != null && temp.getPrevious() != null) {
+            temp.getPrevious().setNext(temp.getNext());
+            temp.getNext().setPrevious(temp.getPrevious());
+        }else if(temp.getPrevious() != null) {
+            temp.getPrevious().setNext(null);
+        }else {
+            temp.getNext().setPrevious(null);
+        }
         return list;
     }
 }
