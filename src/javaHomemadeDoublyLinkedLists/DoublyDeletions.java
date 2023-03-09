@@ -16,7 +16,6 @@ public class DoublyDeletions {
                 System.out.println("node not found");
                 return list;
             }
-            return list;
         }
 
         // changing node references at selected node in linked list
