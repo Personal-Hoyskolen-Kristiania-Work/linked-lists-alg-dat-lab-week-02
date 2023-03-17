@@ -76,12 +76,14 @@ public class DoublyInsertions {
             }
         }
 
+        /*
         if(temp.getNext() != null) {
             newNode.setNext(temp.getNext()); //set the next variable to equal current temp nodes next
             newNode.getNext().setPrevious(newNode); //set the next nodes previous to be new node
         }
         newNode.setPrevious(temp); //set previous variable to equal current temp node
         temp.setNext(newNode); //set the next variable to equal the new node
+         */
         return list; //return list with the changes
     }
 
