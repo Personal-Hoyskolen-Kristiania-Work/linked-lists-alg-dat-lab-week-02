@@ -11,10 +11,7 @@ public class DoublyDeletions {
     public DoublyNode deleteAtSelectedNode(DoublyNode list, int key) {
         DoublyNode temp = list; //node for running the loop
 
-        System.out.println("linked list node data: " + temp.getData() + " key value: " + key);
-
         while (temp.getData() != key) {
-            System.out.println("loop ran");
             temp = temp.getNext();
             if(temp == null) {
                 System.out.println("node not found");
@@ -22,23 +19,18 @@ public class DoublyDeletions {
             }
         }
 
-        refferenceOutOfExistence(temp);
-        return list;
-    }
-
-    private void refferenceOutOfExistence(DoublyNode temp){
         // changing node references at selected node in linked list
         if(temp.getNext() != null && temp.getPrevious() != null) {
-            System.out.println("first option ran");
             temp.getPrevious().setNext(temp.getNext());
             temp.getNext().setPrevious(temp.getPrevious());
         }else if(temp.getPrevious() != null) {
-            System.out.println("second option ran");
             temp.getPrevious().setNext(null);
-        }else {
-            System.out.println("third option ran");
+        }else if(temp.getNext() != null){
+            list = temp.getNext();
             temp.getNext().setPrevious(null);
         }
+
+        return list;
     }
 
     public DoublyNode deleteAtPosition(DoublyNode list, int position) {

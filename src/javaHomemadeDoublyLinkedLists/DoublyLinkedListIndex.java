@@ -82,6 +82,8 @@ public class DoublyLinkedListIndex {
         atSpecifiedPositionDeletion(linkedListTwo,4); //position do not exist
         atSpecifiedPositionDeletion(linkedListTwo,3);
         print.traversePrintingDLL(linkedListTwo);
+        // reverse traverse linked list
+        print.reverseTraversePrintingDLL(linkedListTwo);
     }
 
     // these functions could have returned the Node class instance,
