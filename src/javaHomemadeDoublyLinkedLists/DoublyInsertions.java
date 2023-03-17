@@ -41,6 +41,7 @@ public class DoublyInsertions {
         }
 
         if (temp.getNext() != null) {
+            System.out.println("if statement were in use");
             newNode.setNext(temp.getNext()); //set the next variable to equal current temp nodes next
             newNode.getNext().setPrevious(newNode); //set the next nodes previous to be new node
         }
