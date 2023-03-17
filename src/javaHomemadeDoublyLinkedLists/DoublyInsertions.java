@@ -29,6 +29,7 @@ public class DoublyInsertions {
 
         // looping through all elements that do not meet the requirements
         while(temp.getData() != key) {
+            System.out.println("loop were in use");
             // set temp node to equal next temp node while loop is going
             // effectively decreasing temp linked list by one for each node the loop traverse through
             temp = temp.getNext();
