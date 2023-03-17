@@ -58,6 +58,7 @@ public class DoublyLinkedListIndex {
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
+        afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         // traverse linked list
         print.traversePrintingDLL(linkedListTwo);
         // reverse traverse linked list
@@ -79,7 +80,8 @@ public class DoublyLinkedListIndex {
         print.traversePrintingDLL(linkedListTwo);
         atSpecifiedPositionDeletion(linkedListTwo,4);
         print.traversePrintingDLL(linkedListTwo);
-        atSpecifiedPositionDeletion(linkedListTwo,4); //position do not exist
+        atSpecifiedPositionDeletion(linkedListTwo,4);
+        atSpecifiedPositionDeletion(linkedListTwo,4); // position does not exist
         atSpecifiedPositionDeletion(linkedListTwo,3);
         print.traversePrintingDLL(linkedListTwo);
         // reverse traverse linked list

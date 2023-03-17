@@ -7,12 +7,12 @@
     * only forward, no reference available for backward traversing
   * [x] Searching
 
-* I might do this
-  * Doubly linked lists operations:
-    * [ ] insertion
-    * [ ] deletion
-    * [ ] traversing
-    * [ ] searching
+* [x] implement homemade Doubly linked list
+  * [x] insertion
+  * [x] deletion
+  * [x] traversing
+  * [x] reverse traversing
+  * [x] searching
 
 * [ ] implement LinkedList from java utils package
   * Doubly linked lists operations:
