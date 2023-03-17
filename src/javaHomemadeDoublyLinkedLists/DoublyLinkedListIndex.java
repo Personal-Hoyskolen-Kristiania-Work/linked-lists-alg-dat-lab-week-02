@@ -54,15 +54,14 @@ public class DoublyLinkedListIndex {
         afterNodeWithKeyDataInsertion(linkedListTwo,1,4);
         print.traversePrintingDLL(linkedListTwo);
         // add to position after specified node in first list, except it will only pick the first one it sees, and print 4x6 in a row
-        afterNodeWithKeyDataInsertion(linkedListTwo,3,6);
-        afterNodeWithKeyDataInsertion(linkedListTwo,3,6);
+        afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
+        afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         // traverse linked list
         print.traversePrintingDLL(linkedListTwo);
         // reverse traverse linked list
         print.reverseTraversePrintingDLL(linkedListTwo);
-        System.out.println(linkedListTwo.head.getNext().getNext().getNext().getPrevious().getNext().getData()); //dummy test that shows how the node that get referred to as the last 4 in reverse traverse, is in fact the head node
         // will delete two nodes with data value 4, after head it will delete any element it finds first matching the requirement
         deleteAtNode(linkedListTwo,4);
         print.traversePrintingDLL(linkedListTwo);

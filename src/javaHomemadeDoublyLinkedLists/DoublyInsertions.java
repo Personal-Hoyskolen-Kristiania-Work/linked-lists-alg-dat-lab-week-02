@@ -17,19 +17,11 @@ public class DoublyInsertions {
     // if the int value contained in a node matches the "key" value, then place node after that node
     public DoublyNode insertAfterNodeValue(DoublyNode list, int key, int intVal) {
         DoublyNode newNode = new DoublyNode(intVal); //node with new value we want to add
-        // if head data variable match the "key" value, it will place newNode as the next node
-        if(key == list.getData()) {
-            newNode.setNext(list.getNext()); //set new nodes next node to be the next node after head node
-            newNode.setPrevious(list); //set new nodes previous node to list
-            list.setNext(newNode); //change newNode to the next node
-            return list; //return list with the changes
-        }
 
         DoublyNode temp = list; //temporary variable containing the elements from the current linked list we want to change
 
         // looping through all elements that do not meet the requirements
         while(temp.getData() != key) {
-            System.out.println("loop were in use");
             // set temp node to equal next temp node while loop is going
             // effectively decreasing temp linked list by one for each node the loop traverse through
             temp = temp.getNext();
@@ -41,7 +33,6 @@ public class DoublyInsertions {
         }
 
         if (temp.getNext() != null) {
-            System.out.println("if statement were in use");
             newNode.setNext(temp.getNext()); //set the next variable to equal current temp nodes next
             newNode.getNext().setPrevious(newNode); //set the next nodes previous to be new node
         }
