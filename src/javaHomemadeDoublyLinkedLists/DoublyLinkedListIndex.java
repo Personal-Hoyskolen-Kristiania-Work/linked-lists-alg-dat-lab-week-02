@@ -88,9 +88,6 @@ public class DoublyLinkedListIndex {
         print.reverseTraversePrintingDLL(linkedListTwo);
     }
 
-    // these functions could have returned the Node class instance,
-    // but it's less to write when changing the entire LinkedList class instance instead
-
     // insert an element at head position
     private static void headInsertion(DoublyLinkedList list, int intVal) {
         list.head = insertion.insertAtHead(list.head, intVal);
