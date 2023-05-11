@@ -9,7 +9,7 @@ public class CircularSinglySearch {
         CircularSinglyNode temp = list;
         while (temp.getData() != key) {
             temp = temp.getNext();
-            if(temp == null){
+            if(temp == list){
                 System.out.println("Node not found");
                 return null;
             }
