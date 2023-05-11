@@ -42,8 +42,7 @@ public class CircularSinglyLinkedListIndex {
         headInsertion(linkedListTwo,4);
         headInsertion(linkedListTwo,3);
         print.traversePrintingLL(linkedListTwo);
-        /*
-        // add to head position using position
+        // add to after head position using position
         atSpecifiedPositionInsertion(linkedListTwo,0,4);
         atSpecifiedPositionInsertion(linkedListTwo,0,4);
         print.traversePrintingLL(linkedListTwo);
@@ -53,7 +52,8 @@ public class CircularSinglyLinkedListIndex {
         // add to position after specified node in first list, except this does not exist
         afterNodeWithKeyDataInsertion(linkedListTwo,1,4);
         print.traversePrintingLL(linkedListTwo);
-        // add to position after specified node in first list, except it will only pick the first one it sees, and print 4x6 in a row
+        // add to position after specified node in first list, except it will only pick the first one it sees, and print 5x6 in a row
+        afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
@@ -71,15 +71,17 @@ public class CircularSinglyLinkedListIndex {
         deleteAtNode(linkedListTwo,7);
         deleteAtNode(linkedListTwo,7);
         print.traversePrintingLL(linkedListTwo);
+        // will try to find a node that don't exist
+        searchForNode(dummyLinkedList, linkedListTwo,5);
+        // print.printN(dummyLinkedList); // uncomment for error
         // will delete node at specified position (0 is head)
         atSpecifiedPositionDeletion(linkedListTwo, 0);
         print.traversePrintingLL(linkedListTwo);
         atSpecifiedPositionDeletion(linkedListTwo,4);
         print.traversePrintingLL(linkedListTwo);
-        atSpecifiedPositionDeletion(linkedListTwo,4); //position do not exist
+        atSpecifiedPositionDeletion(linkedListTwo,4); //position do exist, but we looped through the linked list once
         atSpecifiedPositionDeletion(linkedListTwo,3);
         print.traversePrintingLL(linkedListTwo);
-         */
     }
 
     // these functions could have returned the Node class instance,
