@@ -14,10 +14,6 @@ public class CircularSinglyDeletions {
     }
 
     public CircularSinglyNode deleteAtSelectedNode(CircularSinglyNode list, int key) {
-        if(key == list.getData()){
-            CircularSinglyNode newNode = deleteAtHead(list); // use deleteAtHead method if the target is the first node
-            return newNode;
-        }
 
         CircularSinglyNode temp = list; //node for running the loop
         CircularSinglyNode prev = list; //node for doing the correct iteration
@@ -48,11 +44,6 @@ public class CircularSinglyDeletions {
 
         for (int i = 0; i < position-1; i++) {
             temp = temp.getNext();
-
-            if(temp.getNext() == null) {
-                System.out.println("node not found");
-                return list;
-            }
         }
 
         newNode = temp.getNext();
