@@ -53,8 +53,8 @@ public class CircularSinglyInsertions {
         CircularSinglyNode newNode = new CircularSinglyNode(intVal); //node with new value we want to add
         // change head node if position is 0
         if(position == 0) {
-            newNode.setNext(list); //set newNode next variable to be list, effectively making it head
-            return newNode; //return newNode with the changes
+            list = insertAtHead(list, intVal); //set newNode next variable to be list, effectively making it head
+            return list; //return newNode with the changes
         }
 
         CircularSinglyNode temp = list; //temporary variable containing the elements from the linked list that's getting added to
@@ -64,11 +64,6 @@ public class CircularSinglyInsertions {
             // set temp node to equal next temp node while loop is going
             // effectively decreasing temp linked list by one for each node the loop traverse through
             temp = temp.getNext();
-            // return the original list if loop reach last element
-            if (temp == list) {
-                System.out.println("\"position\" was not found");
-                return list;
-            }
         }
         newNode.setNext(temp.getNext()); //set the next variable to equal current temp nodes next
         temp.setNext(newNode); //set the next variable to equal the new node
