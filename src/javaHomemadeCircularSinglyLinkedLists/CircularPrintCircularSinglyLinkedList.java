@@ -12,7 +12,7 @@ public class CircularPrintCircularSinglyLinkedList {
                 stopCondition = true;
             }
         }
-        System.out.println("NULL");
+        System.out.println("last node reached");
     }
     public void printN(CircularSinglyLinkedList N) {
         // print out current node

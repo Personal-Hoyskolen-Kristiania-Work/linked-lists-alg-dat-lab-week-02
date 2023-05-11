@@ -7,13 +7,18 @@ public class CircularSinglyDeletions {
         while (temp.getNext() != list){
             temp = temp.getNext();
         }
-        temp.setNext(list.getNext());
+        temp.setNext(list.getNext()); // set last node to link to the node after head
 
-        CircularSinglyNode newNode = list.getNext();
+        CircularSinglyNode newNode = list.getNext(); // set new node into the node after head
         return newNode;
     }
 
     public CircularSinglyNode deleteAtSelectedNode(CircularSinglyNode list, int key) {
+        if(key == list.getData()){
+            CircularSinglyNode newNode = deleteAtHead(list); // use deleteAtHead method if the target is the first node
+            return newNode;
+        }
+
         CircularSinglyNode temp = list; //node for running the loop
         CircularSinglyNode prev = list; //node for doing the correct iteration
 
@@ -21,7 +26,7 @@ public class CircularSinglyDeletions {
         while (temp.getData() != key) {
             temp = temp.getNext();
             prev = prev.getNext();
-            if(prev.getNext() == null) {
+            if(prev.getNext() == list) {
                 System.out.println("node not found");
                 return list;
             }
@@ -35,7 +40,7 @@ public class CircularSinglyDeletions {
     public CircularSinglyNode deleteAtPosition(CircularSinglyNode list, int position) {
         CircularSinglyNode newNode = list;
         if (position == 0) {
-            list = newNode.getNext();
+            list = deleteAtHead(newNode); // use deleteAtHead method if the target is the first node
             return list;
         }
 

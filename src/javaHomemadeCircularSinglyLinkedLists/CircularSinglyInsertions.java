@@ -4,10 +4,17 @@ public class CircularSinglyInsertions {
     public CircularSinglyNode insertAtHead(CircularSinglyNode list, int intVal){
         CircularSinglyNode newNode = new CircularSinglyNode(intVal); //method place value at head node position
         newNode.setNext(list); //then previous head node is moved into its next variable reference
-
+        CircularSinglyNode temp = list;
         if(list == null){
             newNode.setNext(newNode); // check to remove the original null head node
+            return newNode;
         }
+
+        while (temp.getNext() != list){
+            temp = temp.getNext(); // loop through nodes until last node before previous head node
+        }
+        temp.setNext(newNode); // set the new node as the reference in the last node
+
         return newNode;
     }
 

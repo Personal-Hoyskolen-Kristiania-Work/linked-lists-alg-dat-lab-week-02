@@ -13,7 +13,7 @@ public class CircularSinglyLinkedListIndex {
 
     public static void main(String[] args){
         linkedListOneOperations(); //simple linked list operations
-        // linkedListTwoOperations(); //experimental operations, use impossible requests etc
+        linkedListTwoOperations(); //experimental operations, use impossible requests etc
     }
 
     private static void linkedListOneOperations() {System.out.println("Linked list one:");
@@ -42,6 +42,7 @@ public class CircularSinglyLinkedListIndex {
         headInsertion(linkedListTwo,4);
         headInsertion(linkedListTwo,3);
         print.traversePrintingLL(linkedListTwo);
+        /*
         // add to head position using position
         atSpecifiedPositionInsertion(linkedListTwo,0,4);
         atSpecifiedPositionInsertion(linkedListTwo,0,4);
@@ -78,6 +79,7 @@ public class CircularSinglyLinkedListIndex {
         atSpecifiedPositionDeletion(linkedListTwo,4); //position do not exist
         atSpecifiedPositionDeletion(linkedListTwo,3);
         print.traversePrintingLL(linkedListTwo);
+         */
     }
 
     // these functions could have returned the Node class instance,
