@@ -2,9 +2,15 @@ package src.javaHomemadeCircularSinglyLinkedLists;
 
 public class CircularSinglyDeletions {
     public CircularSinglyNode deleteAtHead(CircularSinglyNode list) {
-        CircularSinglyNode newNode = list;
-        list = newNode.getNext();
-        return list;
+        CircularSinglyNode temp = list;
+
+        while (temp.getNext() != list){
+            temp = temp.getNext();
+        }
+        temp.setNext(list.getNext());
+
+        CircularSinglyNode newNode = list.getNext();
+        return newNode;
     }
 
     public CircularSinglyNode deleteAtSelectedNode(CircularSinglyNode list, int key) {
