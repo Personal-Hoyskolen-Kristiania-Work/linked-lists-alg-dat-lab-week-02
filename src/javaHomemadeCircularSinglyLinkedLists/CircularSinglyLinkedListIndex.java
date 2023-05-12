@@ -57,7 +57,6 @@ public class CircularSinglyLinkedListIndex {
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
-        afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         print.traversePrintingLL(linkedListTwo);
         // will delete two nodes with data value 4, after head it will delete any element it finds first matching the requirement
         deleteAtNode(linkedListTwo,4);
@@ -75,11 +74,15 @@ public class CircularSinglyLinkedListIndex {
         searchForNode(dummyLinkedList, linkedListTwo,5);
         // print.printN(dummyLinkedList); // uncomment for error
         // will delete node at specified position (0 is head)
+        //will add a node to a specific position, the position don't exist within the length of the list, and it will loop before being placed
+        atSpecifiedPositionInsertion(linkedListTwo,8,3); // will always be placed after head node
+        print.traversePrintingLL(linkedListTwo);
+        // will delete nodes at specified positions
         atSpecifiedPositionDeletion(linkedListTwo, 0);
         print.traversePrintingLL(linkedListTwo);
         atSpecifiedPositionDeletion(linkedListTwo,4);
         print.traversePrintingLL(linkedListTwo);
-        atSpecifiedPositionDeletion(linkedListTwo,4); //position do exist, but we looped through the linked list once
+        atSpecifiedPositionDeletion(linkedListTwo,6); //position do exist, but we looped through the linked list once
         atSpecifiedPositionDeletion(linkedListTwo,3);
         print.traversePrintingLL(linkedListTwo);
     }
