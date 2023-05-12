@@ -47,8 +47,7 @@ public class CircularDoublyInsertions {
         CircularDoublyNode newNode = new CircularDoublyNode(intVal); //node with new value we want to add
         // run insertAtHead method if position is 0
         if(position == 0) {
-            list = insertAtHead(list, intVal);
-            return list; //return list with changes from insertAtHead method
+            return insertAtHead(list, intVal); //return list with changes from insertAtHead method
         }
 
         CircularDoublyNode temp = list; //temporary variable containing the elements from the linked list that's getting added to

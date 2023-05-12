@@ -22,6 +22,9 @@ public class CircularDoublyDeletions {
             }
         }
 
+        if(temp == list){
+            return deleteAtHead(list);
+        }
         // changing node references at selected node in linked list
         temp.getPrevious().setNext(temp.getNext());
         temp.getNext().setPrevious(temp.getPrevious());
@@ -30,20 +33,20 @@ public class CircularDoublyDeletions {
 
     public CircularDoublyNode deleteAtPosition(CircularDoublyNode list, int position) {
         CircularDoublyNode temp = list;
-        if (position == 0) {
+        if (position == 0 || list == list.getNext()) {
             return deleteAtHead(list);
         }
 
         for (int i = 0; i < position; i++) {
             temp = temp.getNext();
+            if(temp == list){
+                temp = temp.getNext(); // correction for the sake of consistency, as no added element using position can be head after 0 position
+            }
         }
 
         // changing node references at selected node in linked list, effectively referencing itself out of existence
         temp.getPrevious().setNext(temp.getNext());
         temp.getNext().setPrevious(temp.getPrevious());
-        if(temp == list){
-            return temp.getNext();
-        }
         return list;
     }
 }

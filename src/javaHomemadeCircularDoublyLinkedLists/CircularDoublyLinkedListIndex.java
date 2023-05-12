@@ -75,13 +75,16 @@ public class CircularDoublyLinkedListIndex {
         deleteAtNode(linkedListTwo,7);
         print.traversePrintingDLL(linkedListTwo);
         // will add node to specified position
-        atSpecifiedPositionInsertion(linkedListTwo,8,3);
-        // will delete node at specified position (0 is head)
-        atSpecifiedPositionDeletion(linkedListTwo, 9);
+        atSpecifiedPositionInsertion(linkedListTwo,9,3); // add 3 after looping through once
+        atSpecifiedPositionInsertion(linkedListTwo,0,5);
         print.traversePrintingDLL(linkedListTwo);
+        // will delete node at specified position (0 is head)
+        atSpecifiedPositionDeletion(linkedListTwo, 18); // remove 3 after looping through twice
         atSpecifiedPositionDeletion(linkedListTwo, 0);
         print.traversePrintingDLL(linkedListTwo);
+        atSpecifiedPositionDeletion(linkedListTwo,10);
         atSpecifiedPositionDeletion(linkedListTwo,4);
+        atSpecifiedPositionDeletion(linkedListTwo,6);
         print.traversePrintingDLL(linkedListTwo);
         // reverse traverse linked list
         print.reverseTraversePrintingDLL(linkedListTwo);
