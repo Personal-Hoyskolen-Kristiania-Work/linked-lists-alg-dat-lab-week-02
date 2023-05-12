@@ -4,8 +4,7 @@ public class CircularDoublyDeletions {
     public CircularDoublyNode deleteAtHead(CircularDoublyNode list) {
         CircularDoublyNode newNode = list.getNext();
         if (newNode == list) {
-            newNode = null;
-            return newNode;
+            return null;
         }
         newNode.setPrevious(list.getPrevious());
         newNode.getPrevious().setNext(newNode);
@@ -15,7 +14,6 @@ public class CircularDoublyDeletions {
     // these next two do not work if there's only 1 node left
     public CircularDoublyNode deleteAtSelectedNode(CircularDoublyNode list, int key) {
         CircularDoublyNode temp = list; //node for running the loop
-
         while (temp.getData() != key) {
             temp = temp.getNext();
             if(temp == list) {
@@ -33,9 +31,7 @@ public class CircularDoublyDeletions {
     public CircularDoublyNode deleteAtPosition(CircularDoublyNode list, int position) {
         CircularDoublyNode temp = list;
         if (position == 0) {
-            list = temp.getNext();
-            list.setPrevious(null);
-            return list;
+            return deleteAtHead(list);
         }
 
         for (int i = 0; i < position; i++) {
@@ -45,6 +41,9 @@ public class CircularDoublyDeletions {
         // changing node references at selected node in linked list, effectively referencing itself out of existence
         temp.getPrevious().setNext(temp.getNext());
         temp.getNext().setPrevious(temp.getPrevious());
+        if(temp == list){
+            return temp.getNext();
+        }
         return list;
     }
 }
