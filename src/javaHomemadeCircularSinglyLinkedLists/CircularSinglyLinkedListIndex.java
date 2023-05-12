@@ -9,7 +9,7 @@ public class CircularSinglyLinkedListIndex {
     private static final CircularSinglyInsertions insertion = new CircularSinglyInsertions();
     private static final CircularSinglyDeletions deletion = new CircularSinglyDeletions();
     private static final CircularSinglySearch searching = new CircularSinglySearch();
-    private static final CircularPrintCircularSinglyLinkedList print = new CircularPrintCircularSinglyLinkedList();
+    private static final PrintCircularSinglyLinkedList print = new PrintCircularSinglyLinkedList();
 
     public static void main(String[] args){
         linkedListOneOperations(); //simple linked list operations

@@ -1,13 +1,13 @@
 package src.javaHomemadeCircularDoublyLinkedLists;
 
 // singly linked list node structure
-public class DoublyNode {
+public class CircularDoublyNode {
     private int data; //data
-    private DoublyNode previous;
-    private DoublyNode next; //node class object/ reference to next node
+    private CircularDoublyNode previous;
+    private CircularDoublyNode next; //node class object/ reference to next node
 
     // constructor call, allow for setting int value of data variable
-    DoublyNode(int value) {
+    CircularDoublyNode(int value) {
         setData(value); //set constructor input to equal data variable
         setNext(null); //set node object/ reference to instance to equal null
         setPrevious(null); //set node object/ reference to instance to equal null
@@ -17,10 +17,10 @@ public class DoublyNode {
     public int getData() {
         return data;
     }
-    public DoublyNode getPrevious(){
+    public CircularDoublyNode getPrevious(){
         return previous;
     }
-    public DoublyNode getNext() {
+    public CircularDoublyNode getNext() {
         return next;
     }
     //endregion
@@ -29,10 +29,10 @@ public class DoublyNode {
     public void setData(int data) {
         this.data = data;
     }
-    public void setPrevious(DoublyNode previous){
+    public void setPrevious(CircularDoublyNode previous){
         this.previous = previous;
     }
-    public void setNext(DoublyNode next) {
+    public void setNext(CircularDoublyNode next) {
         this.next = next;
     }
     //endregion

@@ -1,24 +1,31 @@
 package src.javaHomemadeCircularDoublyLinkedLists;
 
-public class DoublyInsertions {
+public class CircularDoublyInsertions {
     // the Node element previous never get to be a class object with any value in the head node, only an empty variable
-    public DoublyNode insertAtHead(DoublyNode list, int intVal) {
-        DoublyNode newNode = new DoublyNode(intVal); //method place value in new head node
+    public CircularDoublyNode insertAtHead(CircularDoublyNode list, int intVal) {
+        CircularDoublyNode newNode = new CircularDoublyNode(intVal); //method place value in new head node
+        CircularDoublyNode temp = list; // temporary node, used to loop through, and make last node connect to head
         newNode.setNext(list); //then previous head node is moved into its next variable reference
         if(list == null){
+            newNode.setNext(newNode);
+            newNode.setPrevious(newNode);
             return newNode; //if list is null, it's not possible to assign it a previous object reference, so we hand it back before that happen
         }
         list.setPrevious(newNode); //set original head nodes previous variable to new node
+        while (temp.getNext() != list){
+            temp = temp.getNext();
+        }
+        temp.setNext(newNode);
         return newNode; //return newNode with changes, by default the value of the nodes previous is set to null in constructor
     }
 
     // method place node based on previous Node class instance contained
     // int value will pick first matching node value it sees
     // if the int value contained in a node matches the "key" value, then place node after that node
-    public DoublyNode insertAfterNodeValue(DoublyNode list, int key, int intVal) {
-        DoublyNode newNode = new DoublyNode(intVal); //node with new value we want to add
+    public CircularDoublyNode insertAfterNodeValue(CircularDoublyNode list, int key, int intVal) {
+        CircularDoublyNode newNode = new CircularDoublyNode(intVal); //node with new value we want to add
 
-        DoublyNode temp = list; //temporary variable containing the elements from the current linked list we want to change
+        CircularDoublyNode temp = list; //temporary variable containing the elements from the current linked list we want to change
 
         // looping through all elements that do not meet the requirements
         while(temp.getData() != key) {
@@ -42,8 +49,8 @@ public class DoublyInsertions {
     }
 
     // insert based on position given
-    public DoublyNode insertAtPosition(DoublyNode list, int position, int intVal) {
-        DoublyNode newNode = new DoublyNode(intVal); //node with new value we want to add
+    public CircularDoublyNode insertAtPosition(CircularDoublyNode list, int position, int intVal) {
+        CircularDoublyNode newNode = new CircularDoublyNode(intVal); //node with new value we want to add
         // change head node if position is 0
         if(position == 0) {
             newNode.setNext(list); //set newNode next variable to be list, effectively making it head
@@ -54,7 +61,7 @@ public class DoublyInsertions {
             return newNode; //return newNode with the changes, previous is set to null in constructor
         }
 
-        DoublyNode temp = list; //temporary variable containing the elements from the linked list that's getting added to
+        CircularDoublyNode temp = list; //temporary variable containing the elements from the linked list that's getting added to
 
         // looping through all elements that do not meet the requirements
         for (int i = 0; i < position - 1; i++) {
@@ -76,9 +83,9 @@ public class DoublyInsertions {
         return list; //return list with the changes
     }
 
-    public DoublyNode tailInsertion(DoublyNode list, int intVal) {
-        DoublyNode newNode = new DoublyNode(intVal);
-        DoublyNode temp = list;
+    public CircularDoublyNode tailInsertion(CircularDoublyNode list, int intVal) {
+        CircularDoublyNode newNode = new CircularDoublyNode(intVal);
+        CircularDoublyNode temp = list;
         while (temp.getNext() != null) {
             temp = temp.getNext();
         }

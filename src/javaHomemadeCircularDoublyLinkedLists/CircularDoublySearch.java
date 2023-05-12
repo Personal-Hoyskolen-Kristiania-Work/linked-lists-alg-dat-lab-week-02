@@ -1,12 +1,12 @@
 package src.javaHomemadeCircularDoublyLinkedLists;
 
-public class DoublySearch {
-    public DoublyNode search(DoublyNode list, int key) {
+public class CircularDoublySearch {
+    public CircularDoublyNode search(CircularDoublyNode list, int key) {
         if(list.getData() == key) {
             return list;
         }
 
-        DoublyNode temp = list;
+        CircularDoublyNode temp = list;
         while (temp.getData() != key) {
             temp = temp.getNext();
             if(temp == null){

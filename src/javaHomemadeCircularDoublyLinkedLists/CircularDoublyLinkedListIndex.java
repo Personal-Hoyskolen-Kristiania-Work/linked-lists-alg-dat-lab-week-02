@@ -1,24 +1,25 @@
 package src.javaHomemadeCircularDoublyLinkedLists;
 
-public class DoublyLinkedListIndex {
+public class CircularDoublyLinkedListIndex {
     // linked lists
-    private static final DoublyLinkedList linkedListOne = new DoublyLinkedList();
-    private static final DoublyLinkedList linkedListTwo = new DoublyLinkedList();
-    private static final DoublyLinkedList dummyLinkedList = new DoublyLinkedList();
+    private static final CircularDoublyLinkedList linkedListOne = new CircularDoublyLinkedList();
+    private static final CircularDoublyLinkedList linkedListTwo = new CircularDoublyLinkedList();
+    private static final CircularDoublyLinkedList dummyLinkedList = new CircularDoublyLinkedList();
     // operations
-    private static final DoublyInsertions insertion = new DoublyInsertions();
-    private static final DoublyDeletions deletion = new DoublyDeletions();
-    private static final DoublySearch searching = new DoublySearch();
-    private static final PrintDoublyLinkedList print = new PrintDoublyLinkedList();
+    private static final CircularDoublyInsertions insertion = new CircularDoublyInsertions();
+    private static final CircularDoublyDeletions deletion = new CircularDoublyDeletions();
+    private static final CircularDoublySearch searching = new CircularDoublySearch();
+    private static final PrintCircularDoublyLinkedList print = new PrintCircularDoublyLinkedList();
 
     public static void main(String[] args){
         linkedListOneOperations(); //simple linked list operations
-        linkedListTwoOperations(); //experimental operations, use impossible requests etc
+        //linkedListTwoOperations(); //experimental operations, use impossible requests etc
     }
 
     private static void linkedListOneOperations() {System.out.println("Linked list one:");
         headInsertion(linkedListOne, 4); //add to head position in linked list one
         print.traversePrintingDLL(linkedListOne);
+        /*
         tailInsertion(linkedListOne, 0); //add node to tail in linked list one
         print.traversePrintingDLL(linkedListOne);
         afterNodeWithKeyDataInsertion(linkedListOne, 4, 3); //add node to position after node with specified data in linked list one
@@ -34,6 +35,7 @@ public class DoublyLinkedListIndex {
         print.traversePrintingDLL(linkedListOne);
         searchForNode(dummyLinkedList, linkedListOne, 3); //search for node with specified data in linked list one
         print.printN(dummyLinkedList);
+         */
     }
 
     private static void linkedListTwoOperations() {
@@ -89,42 +91,42 @@ public class DoublyLinkedListIndex {
     }
 
     // insert an element at head position
-    private static void headInsertion(DoublyLinkedList list, int intVal) {
+    private static void headInsertion(CircularDoublyLinkedList list, int intVal) {
         list.head = insertion.insertAtHead(list.head, intVal);
     }
 
     // insert at position after selected nodes data variable value that equal to "key" value
-    private static void afterNodeWithKeyDataInsertion(DoublyLinkedList list, int key, int intVal) {
+    private static void afterNodeWithKeyDataInsertion(CircularDoublyLinkedList list, int key, int intVal) {
         list.head = insertion.insertAfterNodeValue(list.head, key, intVal);
     }
 
     // insert at position after selected nodes data variable value that equal to "key" value
-    private static void atSpecifiedPositionInsertion(DoublyLinkedList list, int position, int intVal) {
+    private static void atSpecifiedPositionInsertion(CircularDoublyLinkedList list, int position, int intVal) {
         list.head = insertion.insertAtPosition(list.head, position, intVal);
     }
 
     // insert at tail position
-    private static void tailInsertion(DoublyLinkedList list, int intVal) {
+    private static void tailInsertion(CircularDoublyLinkedList list, int intVal) {
         list.head = insertion.tailInsertion(list.head, intVal);
     }
 
     // delete head node
-    private static void deleteHeadNode(DoublyLinkedList list) {
+    private static void deleteHeadNode(CircularDoublyLinkedList list) {
         list.head = deletion.deleteAtHead(list.head);
     }
 
     // delete node at node with int data variable matching key value
-    private static void deleteAtNode(DoublyLinkedList list, int key) {
+    private static void deleteAtNode(CircularDoublyLinkedList list, int key) {
         list.head = deletion.deleteAtSelectedNode(list.head, key);
     }
 
     // delete node at specified position in list
-    private static void atSpecifiedPositionDeletion(DoublyLinkedList list, int position) {
+    private static void atSpecifiedPositionDeletion(CircularDoublyLinkedList list, int position) {
         list.head = deletion.deleteAtPosition(list.head, position);
     }
 
     // return node with data value matching intVal, then assign it to separate linked list
-    private static void searchForNode(DoublyLinkedList setList, DoublyLinkedList getList, int intVal) {
+    private static void searchForNode(CircularDoublyLinkedList setList, CircularDoublyLinkedList getList, int intVal) {
         setList.head = searching.search(getList.head, intVal);
     }
 }

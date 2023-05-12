@@ -1,6 +1,6 @@
 package src.javaHomemadeCircularSinglyLinkedLists;
 
-public class CircularPrintCircularSinglyLinkedList {
+public class PrintCircularSinglyLinkedList {
     public void traversePrintingLL(CircularSinglyLinkedList LL) {
         CircularSinglyNode temp = LL.head;
         boolean stopCondition = false;

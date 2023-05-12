@@ -1,15 +1,15 @@
 package src.javaHomemadeCircularDoublyLinkedLists;
 
-public class DoublyDeletions {
-    public DoublyNode deleteAtHead(DoublyNode list) {
-        DoublyNode newNode = list;
+public class CircularDoublyDeletions {
+    public CircularDoublyNode deleteAtHead(CircularDoublyNode list) {
+        CircularDoublyNode newNode = list;
         list = newNode.getNext();
         list.setPrevious(null);
         return list;
     }
 
-    public DoublyNode deleteAtSelectedNode(DoublyNode list, int key) {
-        DoublyNode temp = list; //node for running the loop
+    public CircularDoublyNode deleteAtSelectedNode(CircularDoublyNode list, int key) {
+        CircularDoublyNode temp = list; //node for running the loop
 
         while (temp.getData() != key) {
             temp = temp.getNext();
@@ -33,8 +33,8 @@ public class DoublyDeletions {
         return list;
     }
 
-    public DoublyNode deleteAtPosition(DoublyNode list, int position) {
-        DoublyNode temp = list;
+    public CircularDoublyNode deleteAtPosition(CircularDoublyNode list, int position) {
+        CircularDoublyNode temp = list;
         if (position == 0) {
             list = temp.getNext();
             list.setPrevious(null);
