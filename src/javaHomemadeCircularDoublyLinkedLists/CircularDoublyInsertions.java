@@ -4,18 +4,15 @@ public class CircularDoublyInsertions {
     // the Node element previous never get to be a class object with any value in the head node, only an empty variable
     public CircularDoublyNode insertAtHead(CircularDoublyNode list, int intVal) {
         CircularDoublyNode newNode = new CircularDoublyNode(intVal); //method place value in new head node
-        CircularDoublyNode temp = list; // temporary node, used to loop through, and make last node connect to head
         newNode.setNext(list); //then previous head node is moved into its next variable reference
         if(list == null){
             newNode.setNext(newNode);
             newNode.setPrevious(newNode);
             return newNode; //if list is null, it's not possible to assign it a previous object reference, so we hand it back before that happen
         }
+        newNode.setPrevious(list.getPrevious()); // set original heads previous to new nodes previous
+        newNode.getPrevious().setNext(newNode); // set original heads previous, next to new node
         list.setPrevious(newNode); //set original head nodes previous variable to new node
-        while (temp.getNext() != list){
-            temp = temp.getNext();
-        }
-        temp.setNext(newNode);
         return newNode; //return newNode with changes, by default the value of the nodes previous is set to null in constructor
     }
 

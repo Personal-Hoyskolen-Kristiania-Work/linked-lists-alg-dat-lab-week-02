@@ -13,7 +13,7 @@ public class CircularDoublyLinkedListIndex {
 
     public static void main(String[] args){
         linkedListOneOperations(); //simple linked list operations
-        //linkedListTwoOperations(); //experimental operations, use impossible requests etc
+        linkedListTwoOperations(); //experimental operations, use impossible requests etc
     }
 
     private static void linkedListOneOperations() {System.out.println("Linked list one:");
@@ -26,7 +26,6 @@ public class CircularDoublyLinkedListIndex {
         atSpecifiedPositionInsertion(linkedListOne, 2, 2); //add node to specified position, starting from 0
         print.traversePrintingDLL(linkedListOne);
         print.reverseTraversePrintingDLL(linkedListOne); //reverse traverse linked list
-        /*
         deleteHeadNode(linkedListOne); //delete head node in linked list one
         print.traversePrintingDLL(linkedListOne);
         deleteAtNode(linkedListOne, 0); //delete node with specified data in linked list one
@@ -35,7 +34,6 @@ public class CircularDoublyLinkedListIndex {
         print.traversePrintingDLL(linkedListOne);
         searchForNode(dummyLinkedList, linkedListOne, 3); //search for node with specified data in linked list one
         print.printN(dummyLinkedList);
-         */
     }
 
     private static void linkedListTwoOperations() {
@@ -56,7 +54,6 @@ public class CircularDoublyLinkedListIndex {
         afterNodeWithKeyDataInsertion(linkedListTwo,1,4);
         print.traversePrintingDLL(linkedListTwo);
         // add to position after specified node in first list, except it will only pick the first one it sees, and print 4x6 in a row
-        afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);

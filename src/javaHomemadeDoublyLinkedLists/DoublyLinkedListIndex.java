@@ -53,7 +53,7 @@ public class DoublyLinkedListIndex {
         // add to position after specified node in first list, except this does not exist
         afterNodeWithKeyDataInsertion(linkedListTwo,1,4);
         print.traversePrintingDLL(linkedListTwo);
-        // add to position after specified node in first list, except it will only pick the first one it sees, and print 4x6 in a row
+        // add to position after specified node in first list, except it will only pick the first one it sees, and print 5x6 in a row
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
         afterNodeWithKeyDataInsertion(linkedListTwo,4,6);
