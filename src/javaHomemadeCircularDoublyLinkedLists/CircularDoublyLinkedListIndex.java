@@ -19,7 +19,6 @@ public class CircularDoublyLinkedListIndex {
     private static void linkedListOneOperations() {System.out.println("Linked list one:");
         headInsertion(linkedListOne, 4); //add to head position in linked list one
         print.traversePrintingDLL(linkedListOne);
-        /*
         tailInsertion(linkedListOne, 0); //add node to tail in linked list one
         print.traversePrintingDLL(linkedListOne);
         afterNodeWithKeyDataInsertion(linkedListOne, 4, 3); //add node to position after node with specified data in linked list one
@@ -27,6 +26,7 @@ public class CircularDoublyLinkedListIndex {
         atSpecifiedPositionInsertion(linkedListOne, 2, 2); //add node to specified position, starting from 0
         print.traversePrintingDLL(linkedListOne);
         print.reverseTraversePrintingDLL(linkedListOne); //reverse traverse linked list
+        /*
         deleteHeadNode(linkedListOne); //delete head node in linked list one
         print.traversePrintingDLL(linkedListOne);
         deleteAtNode(linkedListOne, 0); //delete node with specified data in linked list one

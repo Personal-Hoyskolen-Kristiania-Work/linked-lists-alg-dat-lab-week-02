@@ -19,13 +19,13 @@ public class PrintCircularDoublyLinkedList {
         CircularDoublyNode temp = LL.head;
         boolean stopCondition = false;
         while (stopCondition == false){
-            System.out.print(temp.getData() + " -> ");
             temp = temp.getPrevious();
+            System.out.print(temp.getData() + " -> ");
             if(temp.getPrevious() == LL.head.getPrevious()){
                 stopCondition = true;
             }
         }
-        System.out.println("last node reached");
+        System.out.println("head node reached");
     }
 
     public void printN(CircularDoublyLinkedList N) {

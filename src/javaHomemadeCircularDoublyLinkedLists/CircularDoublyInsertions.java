@@ -33,32 +33,25 @@ public class CircularDoublyInsertions {
             // effectively decreasing temp linked list by one for each node the loop traverse through
             temp = temp.getNext();
             // return the original list if loop reach last element
-            if (temp == null) {
+            if (temp == list) {
                 System.out.println("\"key\" value, was not found");
                 return list;
             }
         }
-
-        if (temp.getNext() != null) {
-            newNode.setNext(temp.getNext()); //set the next variable to equal current temp nodes next
-            newNode.getNext().setPrevious(newNode); //set the next nodes previous to be new node
-        }
+        newNode.setNext(temp.getNext()); //set the next variable to equal current temp nodes next
+        newNode.getNext().setPrevious(newNode); //set the next nodes previous to be new node
         newNode.setPrevious(temp); //set the previous variable to equal current temp node
-        temp.setNext(newNode); //set the next variable to equal the new node, making temp head the head node
+        temp.setNext(newNode); //set the next variable to equal the new node
         return list; //return list with the changes
     }
 
     // insert based on position given
     public CircularDoublyNode insertAtPosition(CircularDoublyNode list, int position, int intVal) {
         CircularDoublyNode newNode = new CircularDoublyNode(intVal); //node with new value we want to add
-        // change head node if position is 0
+        // run insertAtHead method if position is 0
         if(position == 0) {
-            newNode.setNext(list); //set newNode next variable to be list, effectively making it head
-            if(newNode.getNext() == null){
-                return newNode; //returning what we got, as we cant assign newNode to be previous node if next don't exist
-            }
-            newNode.getNext().setPrevious(newNode); //assign newNode to be previous node
-            return newNode; //return newNode with the changes, previous is set to null in constructor
+            list = insertAtHead(list, intVal);
+            return list; //return list with changes from insertAtHead method
         }
 
         CircularDoublyNode temp = list; //temporary variable containing the elements from the linked list that's getting added to
@@ -67,17 +60,10 @@ public class CircularDoublyInsertions {
         for (int i = 0; i < position - 1; i++) {
             // set temp node to equal next temp node while loop is going
             temp = temp.getNext();
-            // return the original list/ Node element if loop reach last element
-            if (temp == null) {
-                System.out.println("\"position\" was not found");
-                return list;
-            }
         }
 
-        if(temp.getNext() != null) {
-            newNode.setNext(temp.getNext()); //set the next variable to equal current temp nodes next
-            newNode.getNext().setPrevious(newNode); //set the next nodes previous to be new node
-        }
+        newNode.setNext(temp.getNext()); //set the next variable to equal current temp nodes next
+        newNode.getNext().setPrevious(newNode); //set the next nodes previous to be new node
         newNode.setPrevious(temp); //set previous variable to equal current temp node
         temp.setNext(newNode); //set the next variable to equal the new node
         return list; //return list with the changes
@@ -86,12 +72,14 @@ public class CircularDoublyInsertions {
     public CircularDoublyNode tailInsertion(CircularDoublyNode list, int intVal) {
         CircularDoublyNode newNode = new CircularDoublyNode(intVal);
         CircularDoublyNode temp = list;
-        while (temp.getNext() != null) {
+        while (temp.getNext() != list) {
             temp = temp.getNext();
         }
 
         newNode.setPrevious(temp);
+        newNode.setNext(list);
         temp.setNext(newNode);
+        list.setPrevious(newNode); // set the head nodes previous to new node
         return list;
     }
 }
