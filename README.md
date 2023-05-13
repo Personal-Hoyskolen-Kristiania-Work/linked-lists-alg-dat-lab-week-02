@@ -7,7 +7,21 @@
     * only forward, no reference available for backward traversing
   * [x] Searching
 
-* [x] implement homemade Doubly linked list
+* [x] implement homemade doubly linked list
+  * [x] insertion
+  * [x] deletion
+  * [x] traversing
+  * [x] reverse traversing
+  * [x] searching
+
+* [x] implement homemade circular linked list
+  * [x] Insertion
+  * [x] Deletion
+  * [x] Traversing
+    * only forward, no reference available for backward traversing
+  * [x] Searching
+
+* [x] implement homemade doubly circular linked list
   * [x] insertion
   * [x] deletion
   * [x] traversing
